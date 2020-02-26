@@ -16,14 +16,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
-
 import com.asus.mylibrary.R;
 import com.asus.mylibrary.adapters.TabFragmentPagerAdapter;
 import com.asus.mylibrary.fragments.BooksListTabFragment;
 import com.asus.mylibrary.models.Book;
 import com.asus.mylibrary.viewmodels.BookViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 
 public class AllBooksActivity extends AppCompatActivity {
     private static final String TAG = "AllBooksActivity";
@@ -43,6 +42,7 @@ public class AllBooksActivity extends AppCompatActivity {
         initWidgets();
         setUpViewPager(books_viewPager);
         setOnClickListeners();
+        books_tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         books_tabLayout.setupWithViewPager(books_viewPager);
 
     }
@@ -121,8 +121,8 @@ public class AllBooksActivity extends AppCompatActivity {
                 model.insert(book);
             } else if (requestCode == BooksListTabFragment.UPDATE_BOOK_ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
                 model.update(book);
-                Intent intent = new Intent(AllBooksActivity.this, com.asus.mylibrary.activities.OpenedBookActivity.class);
-                intent.putExtra("book",book);
+                Intent intent = new Intent(AllBooksActivity.this, OpenedBookActivity.class);
+                intent.putExtra("book", book);
                 startActivityForResult(intent, BooksListTabFragment.UPDATE_BOOK_ACTIVITY_REQUEST_CODE);
             } else if (requestCode == BooksListTabFragment.UPDATE_BOOK_ACTIVITY_REQUEST_CODE && resultCode == com.asus.mylibrary.activities.OpenedBookActivity.RESULT_DELETE) {
                 model.delete(book);

@@ -21,6 +21,8 @@
             android:id="@+id/books_tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
             android:background="?attr/colorPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -28,15 +30,15 @@
         android:id="@+id/books_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.viewpager.widget.ViewPager>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_book_fab"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
-        android:src="@drawable/ic_add_black_64dp"
+        app:srcCompat="@drawable/ic_add_black_64dp"
         app:fabCustomSize="64dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
