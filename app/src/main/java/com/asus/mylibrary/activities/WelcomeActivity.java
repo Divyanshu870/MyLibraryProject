@@ -45,7 +45,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Check first time launch.
-        if (PrefManager.getInstance().isWelcomeFirstTimeLaunch()) {
+        if (!PrefManager.getInstance().isWelcomeFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
         }

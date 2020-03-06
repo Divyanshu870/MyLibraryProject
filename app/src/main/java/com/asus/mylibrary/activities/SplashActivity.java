@@ -14,7 +14,7 @@ import com.asus.mylibrary.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final long SPLASH_TIME_OUT = 3000;
+    private static final long SPLASH_TIME_OUT = 2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
