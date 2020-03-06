@@ -13,37 +13,39 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/app_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My library"
-            android:textSize="22sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:id="@+id/app_name_text"/>
+            android:text="@string/app_name"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_below="@id/app_name_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
-            android:layout_below="@id/app_name_text">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="See all books"
-                android:id="@+id/open_all_books_btn"
-                android:layout_marginTop="10dp"/>
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
 
             <Button
+                android:id="@+id/open_all_books_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="About"
-                android:id="@+id/about_btn"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/open_all_books_btn"/>
+                android:text="See all books" />
+
+            <Button
+                android:id="@+id/about_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/open_all_books_btn"
+                android:layout_marginTop="10dp"
+                android:text="About" />
 
 
         </RelativeLayout>

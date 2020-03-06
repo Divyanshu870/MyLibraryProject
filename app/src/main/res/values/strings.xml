@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">My Library</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="app_version">Version: 1.0</string>
+
+    <!-- Welcome Page Strings-->
+    <string name="slideTitle">PDF books at ease</string>
+    <string name="open_your_favorite_books_in_the_library">Open your favorite books in the Library</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="blank" />
+    <string name="start">Start</string>
+    <string name="save_your_reading_list_anywhere_anytime">Save your reading list anywhere, anytime</string>
+    <string name="all_your_books_at_one_place">All your books at one place</string>
 </resources>

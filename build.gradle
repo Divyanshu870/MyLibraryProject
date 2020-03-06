@@ -4,11 +4,11 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
-        
+        classpath 'com.android.tools.build:gradle:3.6.1'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,7 +19,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://maven.google.com/' }
-        
+
     }
 }
 ext {
@@ -38,7 +38,9 @@ ext {
     glide = '4.10.0'
     httpClient = '4.3.5.1'
     junit = '4.12'
+    lottieVersion = '3.4.0'
     lifecycleVersion = '2.2.0'
+    docPickerVersion = '1.0.2'
     material = '1.1.0'
     multiDex = '2.0.1'
     okhttp3 = '3.5.0'
