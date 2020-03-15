@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-    <RelativeLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMyBooking"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize">
 
         <TextView
-            android:id="@+id/app_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
             android:text="@string/app_name"
-            android:textColor="@color/colorAccent"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textColor="@color/layout_title_color" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/app_name_text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp">
+    </androidx.appcompat.widget.Toolbar>
 
-            <Button
-                android:id="@+id/open_all_books_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="See all books" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/view_color" />
 
-            <Button
-                android:id="@+id/about_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/open_all_books_btn"
-                android:layout_marginTop="10dp"
-                android:text="About" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@color/white"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingEnd="0dp"
+        app:tabIndicatorColor="@color/theme_color"
+        app:tabTextAppearance="@style/MyBooking.TabItem"
+        app:tabTextColor="@color/tab_unselected_color"
+        app:tabSelectedTextColor="@color/layout_title_color"/>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/view_color"/>
 
-        </RelativeLayout>
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>
