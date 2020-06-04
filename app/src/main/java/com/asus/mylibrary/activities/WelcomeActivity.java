@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
  * @author Jaypatelbond created on 06-03-2020.
  */
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends BaseActivity {
     private static final String TAG = "WelcomeActivity";
     @BindView(R.id.viewPager)
     ViewPager viewPager;
@@ -41,7 +41,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private WelcomeViewPagerAdapter viewPagerAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Check first time launch.

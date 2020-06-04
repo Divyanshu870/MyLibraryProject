@@ -21,5 +21,9 @@
     <color name="green">#2eaa00</color>
     <color name="red">#f40000</color>
     <color name="tab_unselected_color">#969696</color>
+    <color name="touch_bg">#E3E3E3</color>
+    <color name="common_bg">@color/white</color>
+
+
 
 </resources>

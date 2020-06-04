@@ -7,7 +7,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.1'
+        classpath 'com.android.tools.build:gradle:4.0.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,7 +24,7 @@ allprojects {
 }
 ext {
     compileSdkVersion = 29
-    minSdkVersion = 17
+    minSdkVersion = 21
     targetSdkVersion = 29
     versionCode = 1
     versionName = '1.0.0'
@@ -42,11 +42,14 @@ ext {
     lifecycleVersion = '2.2.0'
     docPickerVersion = '1.0.2'
     material = '1.1.0'
+    materialDialog = '0.9.6.0'
     multiDex = '2.0.1'
     okhttp3 = '3.5.0'
     processPhoenix = '2.0.0'
     recyclerView = '1.1.0'
     roomVersion = '2.2.4'
+    RxPaparazzo = '0.6.0-2.x'
+    rxAndroid = '2.0.2'
     viewPager2 = '1.0.0'
 
 }

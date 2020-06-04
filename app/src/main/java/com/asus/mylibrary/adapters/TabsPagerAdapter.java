@@ -17,7 +17,7 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
     int totalTabs;
 
     // Tab Titles
-    private String[] tabTitles = new String[]{"My Books", "Read History", "Favourites"};
+    private String[] tabTitles = new String[]{"My Books", "Recent Reads", "Favourites"};
 
     public TabsPagerAdapter(Context context, FragmentManager fm, int totalTabs) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);

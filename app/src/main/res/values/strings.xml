@@ -11,4 +11,13 @@
     <string name="start">Start</string>
     <string name="save_your_reading_list_anywhere_anytime">Save your reading list anywhere, anytime</string>
     <string name="all_your_books_at_one_place">All your books at one place</string>
+    <string name="add_books">Add Books</string>
+    <string name="no_result_found">No Result Found</string>
+    <string name="please_enter_book_keywords_author_name">Please enter book keywords / author name</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_network_connection">No network connection…</string>
+    <string name="setting">Settings</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
 </resources>
