@@ -13,17 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asus.mylibrary.R;
+import com.asus.mylibrary.model.MyBooksList;
 import com.asus.mylibrary.utils.Constant;
 import com.bumptech.glide.Glide;
+import com.folioreader.FolioReader;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHolder> {
     private Context context;
+    List<MyBooksList> myBooksList;
 
-    public MyBooksAdapter(Context context) {
+    public MyBooksAdapter(Context context, List<MyBooksList> myBooksList) {
         this.context = context;
+        this.myBooksList = myBooksList;
     }
 
     @NonNull
@@ -35,12 +41,22 @@ public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textViewMyBooksTitle.setText(Constant.alldocumentList.get(position).getName());
-        //we will load thumbnail using glid library
-        Uri uri = Uri.fromFile(Constant.alldocumentList.get(position));
+        if (!Constant.alldocumentList.isEmpty()) {
+            holder.textViewMyBooksTitle.setText(myBooksList.get(position).getTitle());
+//            //we will load thumbnail using glid library
+//            Uri uri = Uri.fromFile(Constant.alldocumentList.get(position));
+            holder.imageViewMyBooksThumbnail.setImageResource(myBooksList.get(position).getThumbnail());
+//            // 3rd party library Glide and Picasso for image loading
+//            Glide.with(context)
+//                    .load(uri).thumbnail(0.1f).into((holder).imageViewMyBooksThumbnail);
 
-        Glide.with(context)
-                .load(uri).thumbnail(0.1f).into((holder).imageViewMyBooksThumbnail);
+            holder.rootViewMyBooks.setOnClickListener(v -> {
+
+                FolioReader folioReader = FolioReader.get();
+                folioReader.openBook("");
+            });
+
+        }
 
 
     }

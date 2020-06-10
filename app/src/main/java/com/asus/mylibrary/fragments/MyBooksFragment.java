@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.asus.mylibrary.R;
 import com.asus.mylibrary.adapters.MyBooksAdapter;
+import com.asus.mylibrary.model.MyBooksList;
 import com.asus.mylibrary.utils.Constant;
 import com.asus.mylibrary.utils.SearchDocument;
 import com.asus.mylibrary.utils.StorageUtil;
@@ -31,6 +32,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,9 +70,21 @@ public class MyBooksFragment extends Fragment {
         recyclerViewMyBooks.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         recyclerViewMyBooks.setNestedScrollingEnabled(false);
 
-        myBooksAdapter = new MyBooksAdapter(getContext());
-
+        myBooksAdapter = new MyBooksAdapter(getContext(), getMyBookList());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        recyclerViewMyBooks.setLayoutManager(linearLayoutManager);
         recyclerViewMyBooks.setAdapter(myBooksAdapter);
+
+
+    }
+
+    private List<MyBooksList> getMyBookList() {
+        List<MyBooksList> myBooksLists = new ArrayList<>();
+        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
+        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
+        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
+        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
+        return myBooksLists;
 
     }
 
