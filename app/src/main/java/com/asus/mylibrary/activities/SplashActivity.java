@@ -28,8 +28,6 @@ import java.io.File;
 public class SplashActivity extends BaseActivity {
     private static final long SPLASH_TIME_OUT = 2500;
     RxPermissions rxPermissions;
-    private File storage;
-    private String[] storagePaths;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,10 +87,10 @@ public class SplashActivity extends BaseActivity {
 
     private void initLoadDocuments() {
         //load data here
-        storagePaths = StorageUtil.getStorageDirectories(this);
+        String[] storagePaths = StorageUtil.getStorageDirectories(this);
 
         for (String path : storagePaths) {
-            storage = new File(path);
+            File storage = new File(path);
             SearchDocument.load_Directory_Files(storage);
         }
     }

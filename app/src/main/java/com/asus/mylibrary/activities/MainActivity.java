@@ -46,9 +46,6 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.viewPagerHome)
     ViewPager viewPagerHome;
     private TabsPagerAdapter mAdapter;
-    RxPermissions rxPermissions;
-    private File storage;
-    private String[] storagePaths;
 
     @SuppressLint("CheckResult")
     @Override
@@ -58,8 +55,8 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         initViewPager();
-
     }
+
 
     private void initViewPager() {
         // Setting the text titles for the tab

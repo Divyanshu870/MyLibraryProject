@@ -13,17 +13,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asus.mylibrary.R;
-import com.asus.mylibrary.utils.Constant;
 import com.bumptech.glide.Glide;
+
+import java.io.File;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHolder> {
     private Context context;
+    File files;
 
     public MyBooksAdapter(Context context) {
         this.context = context;
+
     }
 
     @NonNull
@@ -35,13 +39,13 @@ public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textViewMyBooksTitle.setText(Constant.alldocumentList.get(position).getName());
+        files = Constant.alldocumentList.get(position);
+        holder.textViewMyBooksTitle.setText(files.getName());
         //we will load thumbnail using glid library
-        Uri uri = Uri.fromFile(Constant.alldocumentList.get(position));
+        Uri uri = Uri.fromFile(files);
 
         Glide.with(context)
                 .load(uri).thumbnail(0.1f).into((holder).imageViewMyBooksThumbnail);
-
 
     }
 
