@@ -43,7 +43,7 @@ ext {
     docPickerVersion = '1.0.2'
     material = '1.1.0'
     materialDialog = '0.9.6.0'
-    multiDex = '1.0.3'
+    multiDex = '2.0.1'
     okhttp3 = '3.5.0'
     processPhoenix = '2.0.0'
     recyclerView = '1.1.0'

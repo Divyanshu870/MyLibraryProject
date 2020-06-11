@@ -1,8 +1,5 @@
 package com.asus.mylibrary.activities;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,10 +9,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 
+import androidx.annotation.RequiresApi;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.asus.mylibrary.R;
-import com.asus.mylibrary.utils.SearchDocument;
-import com.asus.mylibrary.utils.StorageUtil;
 import com.asus.mylibrary.utils.Utils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -35,7 +32,6 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
 
         initPermissions();
-        initLoadDocuments();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -57,7 +53,6 @@ public class SplashActivity extends BaseActivity {
                 .subscribe(granted -> {
                     if (granted) {
                         // All requested permissions are granted
-                        initLoadDocuments();
                     } else {
 
                         // Making an Alert Dialog for permissions of Storage
@@ -85,13 +80,4 @@ public class SplashActivity extends BaseActivity {
                 });
     }
 
-    private void initLoadDocuments() {
-        //load data here
-        String[] storagePaths = StorageUtil.getStorageDirectories(this);
-
-        for (String path : storagePaths) {
-            File storage = new File(path);
-            SearchDocument.load_Directory_Files(storage);
-        }
-    }
 }

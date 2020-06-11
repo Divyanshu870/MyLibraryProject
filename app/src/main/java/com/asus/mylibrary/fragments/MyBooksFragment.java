@@ -1,12 +1,6 @@
 package com.asus.mylibrary.fragments;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +9,13 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.asus.mylibrary.R;
 import com.asus.mylibrary.adapters.MyBooksAdapter;
 import com.asus.mylibrary.model.MyBooksList;
-import com.asus.mylibrary.utils.Constant;
-import com.asus.mylibrary.utils.SearchDocument;
-import com.asus.mylibrary.utils.StorageUtil;
-import com.asus.mylibrary.utils.Utils;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;

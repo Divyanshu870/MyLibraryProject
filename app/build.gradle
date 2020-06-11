@@ -43,7 +43,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerView"
     implementation "com.google.android.material:material:$rootProject.material"
     implementation "androidx.cardview:cardview:$rootProject.cardView"
-    implementation 'com.android.support:multidex:1.0.3' // ( for androidx)
+    implementation "androidx.multidex:multidex:$rootProject.multiDex"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPager2"
 
 
@@ -103,14 +103,13 @@ dependencies {
 
     implementation 'commons-io:commons-io:2.5'
 
-    //Folio Reader
-    //https://github.com/FolioReader/FolioReader-Android
-    implementation "com.folioreader:folioreader:0.5.4"
-    configurations.matching { it.name == '_internal_aapt2_binary' }.all {
-        config ->
-            config.resolutionStrategy.eachDependency {
-                details -> details.useVersion("3.3.2-5309881")
-            }
-
-    }
+//    //Folio Reader
+//    //https://github.com/FolioReader/FolioReader-Android
+//    implementation 'com.folioreader:folioreader:0.5.4'
+//    implementation 'com.android.support:multidex:1.0.3'
+//    configurations.matching { it.name == '_internal_aapt2_binary' }.all
+//            { config -> config.resolutionStrategy.eachDependency
+//                    { details -> details.useVersion("3.3.2-5309881")
+//                    }
+//            }
 }

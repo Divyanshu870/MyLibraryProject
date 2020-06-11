@@ -1,7 +1,6 @@
 package com.asus.mylibrary.adapters;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asus.mylibrary.R;
 import com.asus.mylibrary.model.MyBooksList;
-import com.asus.mylibrary.utils.Constant;
-import com.bumptech.glide.Glide;
-import com.folioreader.FolioReader;
 
 import java.util.List;
 
@@ -41,9 +37,9 @@ public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if (!Constant.alldocumentList.isEmpty()) {
+        if (!myBooksList.isEmpty()) {
             holder.textViewMyBooksTitle.setText(myBooksList.get(position).getTitle());
-//            //we will load thumbnail using glid library
+//            //we will load thumbnail using glide library
 //            Uri uri = Uri.fromFile(Constant.alldocumentList.get(position));
             holder.imageViewMyBooksThumbnail.setImageResource(myBooksList.get(position).getThumbnail());
 //            // 3rd party library Glide and Picasso for image loading
@@ -51,9 +47,9 @@ public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHold
 //                    .load(uri).thumbnail(0.1f).into((holder).imageViewMyBooksThumbnail);
 
             holder.rootViewMyBooks.setOnClickListener(v -> {
-
-                FolioReader folioReader = FolioReader.get();
-                folioReader.openBook("");
+//
+//                FolioReader folioReader = FolioReader.get();
+//                folioReader.openBook("");
             });
 
         }
@@ -63,7 +59,7 @@ public class MyBooksAdapter extends RecyclerView.Adapter<MyBooksAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return Constant.alldocumentList.size();
+        return myBooksList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
