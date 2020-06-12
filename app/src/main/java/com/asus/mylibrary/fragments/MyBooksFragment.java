@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,8 +59,8 @@ public class MyBooksFragment extends Fragment {
         recyclerViewMyBooks.setNestedScrollingEnabled(false);
 
         myBooksAdapter = new MyBooksAdapter(getContext(), getMyBookList());
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-        recyclerViewMyBooks.setLayoutManager(linearLayoutManager);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false);
+        recyclerViewMyBooks.setLayoutManager(layoutManager);
         recyclerViewMyBooks.setAdapter(myBooksAdapter);
 
 
@@ -68,9 +69,16 @@ public class MyBooksFragment extends Fragment {
     private List<MyBooksList> getMyBookList() {
         List<MyBooksList> myBooksLists = new ArrayList<>();
         myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
-        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
-        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
-        myBooksLists.add(new MyBooksList(R.drawable.milk_and_honey, "Milk and Honey"));
+        myBooksLists.add(new MyBooksList(R.drawable.the_sun_and_her_flower, "The Sun and Her Flower"));
+        myBooksLists.add(new MyBooksList(R.drawable.the_lost_continent, "The Lost Continent"));
+        myBooksLists.add(new MyBooksList(R.drawable.the_lost_oasis, "The Lost Oasis"));
+        myBooksLists.add(new MyBooksList(R.drawable.the_time_machine, "The Time Machine"));
+        myBooksLists.add(new MyBooksList(R.drawable.the_secret_island, "The Secret Island"));
+        myBooksLists.add(new MyBooksList(R.drawable.war_and_peace, "War and Peace"));
+        myBooksLists.add(new MyBooksList(R.drawable.worms_of_the_book, "Worms of the Book"));
+        myBooksLists.add(new MyBooksList(R.drawable.frankenstein, "Frankenstein"));
+        myBooksLists.add(new MyBooksList(R.drawable.around_the_world, "Around the World"));
+        myBooksLists.add(new MyBooksList(R.drawable.happy_return, "Happy Return"));
         return myBooksLists;
 
     }

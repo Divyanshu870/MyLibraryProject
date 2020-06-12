@@ -10,7 +10,6 @@ import com.asus.mylibrary.fragments.FavouritesFragment;
 import com.asus.mylibrary.fragments.MyBooksFragment;
 import com.asus.mylibrary.fragments.ReadHistoryFragment;
 
-import org.jetbrains.annotations.NotNull;
 
 public class TabsPagerAdapter extends FragmentStatePagerAdapter {
     private Context context;
@@ -26,7 +25,6 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
     }
 
     // Showing the Fragments in the Tabs
-    @NotNull
     @Override
     public Fragment getItem(int position) {
         switch (position) {

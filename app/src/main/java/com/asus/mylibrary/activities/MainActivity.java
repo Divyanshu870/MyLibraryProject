@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * @author Jaypatelbond created on 06-03-2020.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
     @BindView(R.id.toolbarMyBooking)
     Toolbar toolbarMyBooking;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TabsPagerAdapter mAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
