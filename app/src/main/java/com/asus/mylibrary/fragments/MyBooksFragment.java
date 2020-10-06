@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.asus.mylibrary.R;
 import com.asus.mylibrary.adapters.MyBooksAdapter;
+import com.asus.mylibrary.listener.ClickListener;
 import com.asus.mylibrary.model.MyBooksList;
+import com.folioreader.FolioReader;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
@@ -30,7 +32,7 @@ import butterknife.ButterKnife;
  * @author Jaypatelbond created on 15-03-2020.
  */
 
-public class MyBooksFragment extends Fragment {
+public class MyBooksFragment extends Fragment implements ClickListener {
     @BindView(R.id.recyclerViewMyBooks)
     RecyclerView recyclerViewMyBooks;
     @BindView(R.id.buttonAdd)
@@ -44,6 +46,11 @@ public class MyBooksFragment extends Fragment {
 
     public MyBooksFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -62,6 +69,7 @@ public class MyBooksFragment extends Fragment {
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false);
         recyclerViewMyBooks.setLayoutManager(layoutManager);
         recyclerViewMyBooks.setAdapter(myBooksAdapter);
+        myBooksAdapter.setClickListener(MyBooksFragment.this);
 
 
     }
@@ -99,4 +107,39 @@ public class MyBooksFragment extends Fragment {
         super.onDestroyView();
     }
 
+    @Override
+    public void ItemClicked(View view, int position) {
+        FolioReader folioReader = FolioReader.get();
+        // Opening Books(EPUB) from there postions
+        if (position == 0) {
+            folioReader.openBook("file:///android_asset/mil_and_honey.epub");
+        }
+        if (position == 1) {
+            folioReader.openBook("file:///android_asset/the_sun_and_her_flowers.epub");
+        }
+        if (position == 2) {
+            folioReader.openBook("file:///android_asset/burroughs_lost_continent.epub");
+        }
+        if (position == 3) {
+            folioReader.openBook("file:///android_asset/dent_lost_oasis.epub");
+        }
+        if (position == 4) {
+            folioReader.openBook("file:///android_asset/wells_time_machine.epub");
+        }
+        if (position == 5) {
+            folioReader.openBook("file:///android_asset/blyton_secret_island.epub");
+        }
+        if (position == 6) {
+            folioReader.openBook("file:///android_asset/howard_worms_of_the_earth.epub");
+        }
+        if (position == 7) {
+            folioReader.openBook("file:///android_asset/shelley_frankenstein.epub");
+        }
+        if (position == 8) {
+            folioReader.openBook("file:///android_asset/verne_around_the_world_in_80_days.epub");
+        }
+        if (position == 9) {
+            folioReader.openBook("file:///android_asset/forester_happy_return.epub");
+        }
+    }
 }

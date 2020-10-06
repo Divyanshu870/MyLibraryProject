@@ -7,7 +7,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.1'
+        classpath 'com.android.tools.build:gradle:4.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -25,9 +25,9 @@ allprojects {
     }
 }
 ext {
-    compileSdkVersion = 29
+    compileSdkVersion = 30
     minSdkVersion = 21
-    targetSdkVersion = 29
+    targetSdkVersion = 30
     versionCode = 1
     versionName = '1.0.0'
 
@@ -41,7 +41,7 @@ ext {
     lottieVersion = '3.4.0'
     lifecycleVersion = '2.2.0'
     docPickerVersion = '1.0.2'
-    material = '1.1.0'
+    material = '1.2.1'
     materialDialog = '0.9.6.0'
     multiDex = '2.0.1'
     processPhoenix = '2.0.0'
